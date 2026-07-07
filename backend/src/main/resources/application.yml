@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: deploy-history-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://deploy-history-postgres:5432/deploy_history}
+    username: ${SPRING_DATASOURCE_USERNAME:deploy_history}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+
+app:
+  security:
+    auth:
+      username: ${APP_SECURITY_USERNAME:admin}
+      password: ${APP_SECURITY_PASSWORD:change-me}
+    jwt:
+      issuer: ${APP_SECURITY_JWT_ISSUER:deploy-history-backend}
+      secret: ${JWT_SECRET:}
+      access-token-ttl-seconds: ${APP_SECURITY_JWT_ACCESS_TOKEN_TTL_SECONDS:3600}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true

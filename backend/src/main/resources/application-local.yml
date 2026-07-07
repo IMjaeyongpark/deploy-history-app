@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/deploy_history}
+    username: ${SPRING_DATASOURCE_USERNAME:deploy_history}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:}

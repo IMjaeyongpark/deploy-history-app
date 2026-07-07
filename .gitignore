@@ -1,0 +1,43 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.idea/
+.vscode/
+*.iml
+
+# Local environment and secrets
+.env
+.env.*
+*.env
+!*.env.example
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Frontend dependencies and generated files
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Backend Gradle/Kotlin generated files
+.gradle/
+.kotlin/
+build/
+out/
+**/build/
+
+# Docker and local compose overrides
+docker-compose.override.yml
+docker-compose.*.override.yml
+
+# Test and report outputs
+test-results/
+reports/
