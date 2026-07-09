@@ -146,8 +146,8 @@ pipeline {
 
                     cd deploy-repo
 
-                    sed -i "s|backendTag: .*|backendTag: ${IMAGE_TAG}|g" helm/values.yaml
-                    sed -i "s|frontendTag: .*|frontendTag: ${IMAGE_TAG}|g" helm/values.yaml
+                    sed -i "s|^\\([[:space:]]*backendTag:\\).*|\\1 ${IMAGE_TAG}|g" helm/values.yaml
+                    sed -i "s|^\\([[:space:]]*frontendTag:\\).*|\\1 ${IMAGE_TAG}|g" helm/values.yaml
 
                     git config user.name "jenkins"
                     git config user.email "jenkins@example.com"
